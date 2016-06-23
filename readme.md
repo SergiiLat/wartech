@@ -1,5 +1,18 @@
 # Wartech coding challenge
 
+**For run server**
+```javascript
+node server
+```
+**For run test**
+```javascript
+npm test
+```
+**For create documentation**
+```javascript
+apidoc -e node_modules/
+```
+
 **Basic feature list:**
 
  * register
@@ -20,8 +33,9 @@
 | route.js     	| file   	|  Route paths			|
 | server.js     | file   	|  main file			|
 
-**For test put **
-npm test
+
+
+
 
 As database was used **MySQL**
 
