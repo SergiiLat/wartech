@@ -20,6 +20,8 @@
 | route.js     	| file   	|  Route paths			|
 | server.js     | file   	|  main file			|
 
+**For test put **
+npm test
 
 As database was used **MySQL**
 
