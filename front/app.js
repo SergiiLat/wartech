@@ -6,7 +6,7 @@ var token = $.cookie("token")
     $('#userInfo').removeClass('hidden')
     $('#login').addClass('hidden');
   }
-  
+
   $('#btnLogin').click(function(){
 
     var email = $('#email').val();
@@ -42,23 +42,18 @@ var token = $.cookie("token")
     })
   });
 
-
-
-
-  $('.product-buy').click(function() {
-    $.ajax({
+  $('body').on('click',".product-buy", function(e) {
+      $.ajax({
       type: 'POST',
       data: {
-        productId: $('.product-buy').parents('.product').attr('id').replace('product-'),
-        token: token
+        productId: $('.product-buy').parents('.product').attr('id').replace('product-', ''),
       },
       url: '/addToBasket',
       success: function (msg) {
         console.log(msg)
       }})
+
   })
-
-
 
   var getItems = function(){
     $.ajax({
@@ -83,7 +78,6 @@ var token = $.cookie("token")
   }
 
   getItems();
-
 
 
 

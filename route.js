@@ -12,8 +12,8 @@ router.post('/register',userCtrl.addUser);
 
 router.use(loginCtrl.checkToken);
 
-router.get('/profile',userCtrl.getUserInfo);
-router.get('/allItems',itemCtrl.getAllItems);
+router.get('/profile', userCtrl.getUserInfo);
+router.get('/allItems', itemCtrl.getAllItems);
 
 router.post('/addToBasket',basketCtrl.addToBasket);
 router.post('/removeFromBasket',basketCtrl.removeFromBasket);
