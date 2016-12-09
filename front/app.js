@@ -26,52 +26,65 @@ var token = $.cookie("token")
         $('#password').val("");
         $.cookie("token",data.token)
         token = data.token;
+        getItems();
       }
     })
   });
 
   $('#btnLogout').click(function(){
     $.get('/logout',function(data){
+      $.removeCookie('token');
+      $('#products').html("");
       $('#userInfo').addClass('hidden')
       $('#login').removeClass('hidden');
-      
       $('#userToken').text("");
       $('#userName').text("");
     })
   });
-  
+
+
+
+
   $('.product-buy').click(function() {
-      $.ajax({
-        type: 'POST',
-        data: {
-          productId: $(this).parents('.product').attr('id').replace('product-'),
-          token: token
-        },
-        url: '/addToBasket',
-        success: function (msg) {
-          console.log(msg)
-        }})
+    $.ajax({
+      type: 'POST',
+      data: {
+        productId: $('.product-buy').parents('.product').attr('id').replace('product-'),
+        token: token
+      },
+      url: '/addToBasket',
+      success: function (msg) {
+        console.log(msg)
+      }})
   })
 
-  $.ajax({
-    type:"GET",
-    beforeSend: function (request)
-    {
-      request.setRequestHeader("Authorization", token);
-    },
-    url: "/api/allItems",
-    success: function(products) {
-      $('#products').html(
-        products.map(function(product) {
+
+
+  var getItems = function(){
+    $.ajax({
+      type:"GET",
+      beforeSend: function (request)
+      {
+        request.setRequestHeader("Authorization", token);
+      },
+      url: "/allItems",
+      success: function(products) {
+        $('#products').html(
+          products.map(function(product) {
             return '<div class="product" id="product-' + product.id + '">'
-            + '<div class="product-name">'+product.name+'</div>'
-            + '<div class="product-price">'+product.price+'</div>'
-            + '<button class="product-buy">'
-            + '</div>'
-        }).join('\n')
-      )
-    }
-  });
+              + '<span class="product-name">'+product.name+'</span>'
+              + '<span class="product-price">'+product.price+'</span>'
+              + '<button class="product-buy">Add to cart</button>'
+              + '</div>'
+          }).join('\n')
+        )
+      }
+    });
+  }
+
+  getItems();
+
+
 
 
 });

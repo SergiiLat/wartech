@@ -30,26 +30,11 @@ module.exports = (function () {
         },
         logout: function (req, res) {
             res.removeHeader('authorization');
+
             res.end('ok');
         },
         checkToken: function (req, res, next) {
-          /*  let token;
-            if (req.headers && req.headers.authorization) {
-                var parts = req.headers.authorization.split(' ');
-                if (parts.length == 2) {
-                    var scheme = parts[0],
-                        credentials = parts[1];
-
-                    if (/^Bearer$/i.test(scheme)) {
-                        token = credentials;
-                    }
-                } else {
-                    return res.status(401).json({err: 'Format is Authorization: Bearer [token]'});
-                }
-            }*/
-
-            let token = req.body.token || req.query.token || req.headers['Authorization'];
-            console.log(token);
+            let token = req.body.token || req.query.token || req.headers['Authorization'] || req.cookies.token;
             if (token) {
 
                 jwt.verify(token, secret, function (err, decoded) {
