@@ -10,8 +10,8 @@ router.get('/logout',loginCtrl.logout);
 router.post('/register',userCtrl.addUser);
 router.use(loginCtrl.checkToken);
 
-router.get('/profile',userCtrl.getUserInfo);
-router.get('/allItems',itemCtrl.getAllItems);
+router.get('/profile', userCtrl.getUserInfo);
+router.get('/allItems', itemCtrl.getAllItems);
 
 
 module.exports = router;
