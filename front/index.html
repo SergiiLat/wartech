@@ -2,65 +2,78 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"
+            integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
     <script src='//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js'></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
 
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-
-       <style>
-           body {
-               padding-top: 5rem !important;
-           }
-           .starter-template {
-               padding: 3rem 1.5rem;
-           }
-           form{
-               display: block;
-               max-width: 500px;
-               margin: 20px auto;
-               padding: 30px;
-               border-style: solid;
-               border-color: #ddd;
-               border-width: 1px;
-               border-radius: 4px 4px 0 0;
-           }
-           .navbar{
-               background: black;
-           }
-           #userInfo{
-               float: right;
-               color: white;
-               padding: 8px;
-           }
-           .row{
-           }
-           .show-grid [class^="col-"] {
-               padding-top: 10px;
-               padding-bottom: 10px;
-
-           }
-           .show-grid .row{
-               border-bottom: 1px solid #ddd;
-           }
-           .show-grid .row:hover{
-               background-color: rgba(86,61,124,.15);
-
-           }
-           .glyphicon{
-               text-align: center;
-               font-size: 2em;
-           }
-           [class^="col-"]>button{
-               margin: -8px;
-           }
-           .tash{
-               min-height: 30px;
-           }
-       </style>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
 
+    <style>
+        body {
+            padding-top: 5rem !important;
+        }
+
+        .starter-template {
+            padding: 3rem 1.5rem;
+        }
+
+        form {
+            display: block;
+            max-width: 500px;
+            margin: 20px auto;
+            padding: 30px;
+            border-style: solid;
+            border-color: #ddd;
+            border-width: 1px;
+            border-radius: 4px 4px 0 0;
+        }
+
+        .navbar {
+            background: black;
+        }
+
+        #userInfo {
+            float: right;
+            color: white;
+            padding: 8px;
+        }
+
+        .row {
+        }
+
+        .show-grid [class^="col-"] {
+            padding-top: 10px;
+            padding-bottom: 10px;
+
+        }
+
+        .show-grid .row {
+            border-bottom: 1px solid #ddd;
+        }
+
+        .show-grid .row:hover {
+            background-color: rgba(86, 61, 124, .15);
+
+        }
+
+        .glyphicon {
+            text-align: center;
+            font-size: 2em;
+        }
+
+        [class^="col-"] > button {
+            margin: -8px;
+        }
+
+        .tash {
+            min-height: 30px;
+        }
+    </style>
 
 
     <script src="app.js"></script>
@@ -71,13 +84,11 @@
 <body>
 
 
-
 <nav class="navbar navbar-fixed-top navbar-dark bg-inverse">
     <a class="navbar-brand">Добро пожаловать</a>
 
     <div id="userInfo" class='hidden'>
         <span id="userName"></span>
-        <span id="userBasket">  Basket here...</span>
         <a class="btn" id="btnLogout">logOut</a>
     </div>
 </nav>
@@ -128,7 +139,7 @@
                 </div>
             </div>
             <div class="col-md-4" style="border-left: 1px solid #eee; margin-left: -1px">
-                <div id="itemsBlock"  class="show-grid">
+                <div id="itemsBlock" class="show-grid">
                     <div class="tash">
                         <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true">
 
@@ -142,24 +153,6 @@
         </div>
     </div>
 </div>
-
-<!--
-<div style="display:inline-block; width:300px;height:600px;border:1px solid black" id='products'>
-    <div class='product' id='product-1' class='product'></div>
-</div>
-<div style="display:inline-block;float:right; width:300px;height:600px;border:1px solid black" id="itemsBlock">
-    <div>BASKET</div>
-    <div id="basketItems">
-
-    </div>
-
-</div>-->
-
-
-
-
-
-
 
 </body>
 </html>
