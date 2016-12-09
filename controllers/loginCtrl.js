@@ -23,7 +23,7 @@ module.exports = (function () {
                         expiresIn: "1h" // expires 1 hour in
                     });
 
-                    res.status(200).json({token: token});
+                    res.status(200).json({token: token,name:user.name});
                   
                 }
 

@@ -23,11 +23,23 @@ let obj = {
         }
     }, {
         freezeTableName: true // Model tableName will be the same as the model name
+    }),
+    Items: sequelize.define('items', {
+
+        name: {
+            type: Sequelize.STRING
+        },
+        price: {
+            type: Sequelize.FLOAT
+        }
+    }, {
+        freezeTableName: true // Model tableName will be the same as the model name
     })
 
 
 };
 
 //obj.Users.sync({force: true});
+//obj.Items.sync({force: true});
 
 module.exports = obj;

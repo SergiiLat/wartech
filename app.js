@@ -12,7 +12,7 @@ let route = require('./route');
 
 
 
-
+app.use(express.static(__dirname+'/front'));
 app.use(cors());
 app.use(bodyParser.urlencoded({
     extended: false
