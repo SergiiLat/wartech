@@ -47,8 +47,20 @@ let token;
           },
           data:{token:token},
           url: "/api/allItems",
-          success: function(msg) {
-            console.log(msg);
+          success: function(items) {
+
+            items.map(function(item){
+
+              var div = $("<div></div>");
+              var elemName = $("<span></span>").append(item.name);
+              var elemPrice = $("<span></span>").append(item.price);
+              var elemAction = $("<span></span>").append("add");
+              div.append(elemName);
+              div.append(elemPrice);
+              $('#itemsBlock').append(div);
+            });
+
+
           }
         });
 

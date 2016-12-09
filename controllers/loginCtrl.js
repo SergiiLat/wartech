@@ -49,6 +49,7 @@ module.exports = (function () {
             }*/
 
             let token = req.body.token || req.query.token || req.headers['Authorization'];
+            console.log(token);
             if (token) {
 
                 jwt.verify(token, secret, function (err, decoded) {
