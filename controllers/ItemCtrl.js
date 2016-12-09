@@ -5,7 +5,6 @@ module.exports = (function () {
   return {
     getAllItems: function (req, res) {
       itemModel.getAll(function (err, items) {
-        console.log(items)
         if (err)
         {
           res.status(404).send({

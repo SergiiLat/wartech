@@ -31,6 +31,18 @@ var obj = {
         }
     }, {
         freezeTableName: true // Model tableName will be the same as the model name
+    }),
+    Backet: sequelize.define('basket', {
+        id: { type: Sequelize.INTEGER, autoIncrement: true, primaryKey: true},
+
+        user_id: {
+            type: Sequelize.INTEGER
+        },
+        item_id: {
+            type: Sequelize.INTEGER
+        }
+    }, {
+        freezeTableName: true // Model tableName will be the same as the model name
     })
 
 
@@ -38,5 +50,6 @@ var obj = {
 
 //obj.Users.sync({force: true});
 //obj.Items.sync({force: true});
+//obj.Backet.sync({force: true});
 
 module.exports = obj;
