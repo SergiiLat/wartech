@@ -1,6 +1,3 @@
-/**
- * Created by user on 22.06.2016.
- */
 "use strict";
 
 let userModel = require('../models/userModel');

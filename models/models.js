@@ -1,6 +1,3 @@
-/**
- * Created by user on 22.06.2016.
- */
 "use strict";
 let Sequelize = require('sequelize');
 let db_config = require('../config').db_config;

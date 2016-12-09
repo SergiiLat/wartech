@@ -1,6 +1,3 @@
-/**
- * Created by sergey on 09.12.16.
- */
 $(document).ready(function(){
 
 let token;
