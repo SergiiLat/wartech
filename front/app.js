@@ -43,18 +43,17 @@ var token = $.cookie("token")
   });
 
   $('body').on('click',".product-buy", function(e) {
-      console.log(e);
       $.ajax({
       type: 'POST',
       data: {
-        productId: $('.product-buy').parents('.product').attr('id').replace('product-'),
+        productId: $('.product-buy').parents('.product').attr('id').replace('product-', ''),
       },
       url: '/addToBasket',
       success: function (msg) {
         console.log(msg)
       }})
-  })
 
+  })
 
   var getItems = function(){
     $.ajax({
@@ -80,7 +79,6 @@ var token = $.cookie("token")
 
   getItems();
 
-  console.log($(".product-buy"));
 
 
 });
