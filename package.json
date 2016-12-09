@@ -1,11 +1,7 @@
 {
-  "name": "wartech",
+  "name": "magazin",
   "version": "1.0.0",
-  "private": true,
   "scripts": {
-    "pretest": "npm install",
-    "test": " mocha test",
-    "start": "node server.js"
   },
   "dependencies": {
     "body-parser": "^1.15.2",
@@ -16,28 +12,8 @@
     "mysql": "^2.11.1",
     "sequelize": "^3.23.3"
   },
-  "devDependencies": {
-    "chai": "^3.5.0",
-    "mocha": "^2.4.5",
-    "supertest": "^1.2.0",
-    "supertest-as-promised": "^3.1.0"
-  },
-  "description": "### You would need: * Node.js * Any database you like",
+  "description": "",
   "main": "server.js",
-  "directories": {
-    "test": "test"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/SergiiLat/wartech.git"
-  },
-  "keywords": [
-    "test"
-  ],
-  "author": "Sergii Markov",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/SergiiLat/wartech/issues"
-  },
-  "homepage": "https://github.com/SergiiLat/wartech#readme"
+  "author": "",
+  "license": "ISC"
 }

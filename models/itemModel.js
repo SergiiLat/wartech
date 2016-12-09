@@ -1,6 +1,4 @@
-"use strict";
-let models = require('../models/models');
-
+var models = require('../models/models');
 
 module.exports = {
   getAll: function (callback) {

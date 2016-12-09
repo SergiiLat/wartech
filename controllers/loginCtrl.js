@@ -1,8 +1,8 @@
-"use strict";
 
-let userModel = require('../models/userModel');
-let jwt = require('jsonwebtoken');
-let secret = require('../config').secret;
+
+var userModel = require('../models/userModel');
+var jwt = require('jsonwebtoken');
+var secret = require('../config').secret;
 
 module.exports = (function () {
     return {
@@ -16,7 +16,7 @@ module.exports = (function () {
                 }
                 else {
 
-                    let token = jwt.sign(user, secret, {
+                    var token = jwt.sign(user, secret, {
                         expiresIn: "1h" // expires 1 hour in
                     });
 
@@ -35,9 +35,9 @@ module.exports = (function () {
         checkToken: function (req, res, next) {
           /*  let token;
             if (req.headers && req.headers.authorization) {
-                let parts = req.headers.authorization.split(' ');
+                var parts = req.headers.authorization.split(' ');
                 if (parts.length == 2) {
-                    let scheme = parts[0],
+                    var scheme = parts[0],
                         credentials = parts[1];
 
                     if (/^Bearer$/i.test(scheme)) {
@@ -74,5 +74,3 @@ module.exports = (function () {
     }
 
 })();
-
-

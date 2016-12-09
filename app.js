@@ -1,14 +1,12 @@
-'use strict';
+var express = require('express');
+var app = express();
 
-let express = require('express');
-let app = express();
-
-let bodyParser = require('body-parser');
-let CookieParser = require('cookie-parser');
-let cors = require('cors');
+var bodyParser = require('body-parser');
+var CookieParser = require('cookie-parser');
+var cors = require('cors');
 
 
-let route = require('./route');
+var route = require('./route');
 
 
 

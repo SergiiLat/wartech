@@ -1,8 +1,8 @@
-"use strict";
 
-let userModel = require('../models/userModel');
-let jwt = require('jsonwebtoken');
-let secret = require('../config').secret;
+
+var userModel = require('../models/userModel');
+var jwt = require('jsonwebtoken');
+var secret = require('../config').secret;
 
 module.exports = (function () {
     return {
@@ -40,7 +40,7 @@ module.exports = (function () {
                                 res.status(500).json({err:err});
                             }
                             else {
-                                let token = jwt.sign(user, secret, {
+                                var token = jwt.sign(user, secret, {
                                     expiresIn: "1h" // expires 1 hour in
                                 });
                                 res.status(201).json({token: token});
