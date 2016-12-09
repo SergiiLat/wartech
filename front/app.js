@@ -1,13 +1,18 @@
 $(document).ready(function(){
 
-let token;
+var token = $.cookie("token")
 
+  if (token) {
+    $('#userInfo').removeClass('hidden')
+    $('#login').addClass('hidden');
+  }
+  
   $('#btnLogin').click(function(){
 
-    let email = $('#email').val();
-    let password = $('#password').val();
+    var email = $('#email').val();
+    var password = $('#password').val();
 
-    $.post('/api/login',{email: email, password: password},function(data){
+    $.post('/login',{email: email, password: password},function(data){
       if (!data.token)
       {
         console.log('error')
@@ -15,43 +20,58 @@ let token;
       }
       else
       {
-        $('#btnGetItems').removeClass('hidden')
-        $('#btnLogout').removeClass('hidden')
-        $('#btnLogin').addClass('hidden');
-        $('#userName').text(data.name);
+        $('#userInfo').removeClass('hidden')
+        $('#login').addClass('hidden');
         $('#email').val("");
         $('#password').val("");
-        $('#userToken').text(data.token);
+        $.cookie("token",data.token)
         token = data.token;
       }
     })
   });
 
   $('#btnLogout').click(function(){
-    $.get('/api/logout',function(data){
-      $('#btnLogout').addClass('hidden')
-      $('#btnGetItems').addClass('hidden')
-      $('#btnLogin').removeClass('hidden')
+    $.get('/logout',function(data){
+      $('#userInfo').addClass('hidden')
+      $('#login').removeClass('hidden');
+      
       $('#userToken').text("");
       $('#userName').text("");
-      console.log(data);
     })
   });
+  
+  $('.product').click(function() {
+      $.ajax({
+        type: 'POST',
+        data: {
+          productId: $(this).attr('id').replace('product-'),
+          token: token
+        },
+        url: '/addToBasket',
+        success: function (msg) {
+          console.log(msg)
+        }})
+  })
 
-  $('#btnGetItems').click(function(){
-        $.ajax({
-          type:"GET",
-          beforeSend: function (request)
-          {
-            request.setRequestHeader("Authorization", token);
-          },
-          data:{token:token},
-          url: "/api/allItems",
-          success: function(msg) {
-            console.log(msg);
-          }
-        });
-
+  $.ajax({
+    type:"GET",
+    beforeSend: function (request)
+    {
+      request.setRequestHeader("Authorization", token);
+    },
+    url: "/allItems",
+    success: function(products) {
+      $('#products').html(
+        products.map(function(product) {
+            return '<div class="product" id="product-' + product.id + '">'
+            + '<div class="product-name">'+product.name+'</div>'
+            + '<div class="product-price">'+product.price+'</div>'
+            + '<button class="product-buy">'
+            + '</div>'
+        }).join('\n')
+      )
+    }
   });
+
 
 });

@@ -1,12 +1,11 @@
-"use strict";
-
-let itemModel = require('../models/itemModel');
+var itemModel = require('../models/itemModel');
 
 
 module.exports = (function () {
   return {
     getAllItems: function (req, res) {
       itemModel.getAll(function (err, items) {
+        console.log(items)
         if (err)
         {
           res.status(404).send({
@@ -20,9 +19,6 @@ module.exports = (function () {
         }
 
       });
-
     }
-
-
   }
 })();

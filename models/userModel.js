@@ -1,6 +1,4 @@
-"use strict";
-let models = require('../models/models');
-
+var models = require('../models/models');
 
 module.exports = {
     addUser: function (new_user, callback) {
@@ -18,7 +16,7 @@ module.exports = {
             .catch(function (err) {
                 callback(err)
             })
-    }, 
+    },
     getUserBy: function (params, callback) {
         models.Users.findOne({where:params})
             .then(function (user) {

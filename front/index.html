@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+    <script src='//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js'></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -13,17 +14,20 @@
 <body>
     MAGAZIN
     <div id = "userBlock">
+      <div id='login'>
         Login <input type="text" id="email"> </br>
         Pass  <input type="text" id="password"> </br>
 
         <button class="btn btn-success" id="btnLogin">login</button>
-        <button class="btn btn-success hidden" id="btnLogout">logOut</button>
-        <button class="btn btn-success hidden" id="btnGetItems">getItems</button>
-        <div id="userInfo">
-            <span id="userName"></span>
-            <span id="userBasket">  Basket here...</span>
-            <span id="userToken"></span>
-        </div>
+      </div>
+      <div id="userInfo" class='hidden'>
+          <span id="userName"></span>
+          <span id="userBasket">  Basket here...</span>
+          <button class="btn btn-success" id="btnLogout">logOut</button>
+      </div>
+    </div>
+    <div id='products'>
+      <div class='product' id='product-1' class='product'></div>
     </div>
 
 

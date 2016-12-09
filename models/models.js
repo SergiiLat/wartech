@@ -1,11 +1,11 @@
-"use strict";
-let Sequelize = require('sequelize');
-let db_config = require('../config').db_config;
 
-let sequelize = new Sequelize(db_config.db , db_config.user, db_config.password, db_config.mysql);
+var Sequelize = require('sequelize');
+var db_config = require('../config').db_config;
+
+var sequelize = new Sequelize(db_config.db , db_config.user, db_config.password, db_config.mysql);
 
 
-let obj = {
+var obj = {
     sequelize: sequelize,
     Users: sequelize.define('users', {
 
@@ -22,7 +22,7 @@ let obj = {
         freezeTableName: true // Model tableName will be the same as the model name
     }),
     Items: sequelize.define('items', {
-
+        id: { type: Sequelize.INTEGER, autoIncrement: true, primaryKey: true},
         name: {
             type: Sequelize.STRING
         },
