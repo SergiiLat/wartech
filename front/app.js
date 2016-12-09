@@ -5,9 +5,14 @@ var token = $.cookie("token")
   if (token) {
     $('#userInfo').removeClass('hidden')
     $('#login').addClass('hidden');
+
+  }else{
+    $('.navbar').addClass('hidden');
   }
   
-  $('#btnLogin').click(function(){
+  $('#btnLogin').click(function(e){
+
+    e.preventDefault()
 
     var email = $('#email').val();
     var password = $('#password').val();
@@ -20,7 +25,9 @@ var token = $.cookie("token")
       }
       else
       {
+        console.log(data)
         $('#userInfo').removeClass('hidden')
+        $('.navbar').removeClass('hidden')
         $('#login').addClass('hidden');
         $('#email').val("");
         $('#password').val("");
@@ -36,6 +43,7 @@ var token = $.cookie("token")
       $.removeCookie('token');
       $('#products').html("");
       $('#userInfo').addClass('hidden')
+      $('.navbar').addClass('hidden')
       $('#login').removeClass('hidden');
       $('#userToken').text("");
       $('#userName').text("");
@@ -69,12 +77,16 @@ var token = $.cookie("token")
       },
       url: "/allItems",
       success: function(products) {
+
+
+
+        
         $('#products').html(
           products.map(function(product) {
-            return '<div class="product" id="product-' + product.id + '">'
-              + '<span class="product-name">'+product.name+'</span>'
-              + '<span class="product-price">'+product.price+'</span>'
-              + '<button class="product-buy">Add to cart</button>'
+            return '<div class="product row" id="product-' + product.id + '">'
+              + '<div class="product-name col-md-5">'+product.name+'</div>'
+              + '<div class="product-price col-md-5">'+product.price+'</div>'
+              + '<button class="product-buy btn btn-default col-md-2">Add to cart</button>'
               + '</div>'
           }).join('\n')
         )

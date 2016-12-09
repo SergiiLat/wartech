@@ -1,0 +1,34 @@
+body {
+    padding-top: 5rem !important;
+}
+.starter-template {
+    padding: 3rem 1.5rem;
+}
+form{
+    display: block;
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 30px;
+    border-style: solid;
+    border-color: #ddd;
+    border-width: 1px;
+    border-radius: 4px 4px 0 0;
+}
+.navbar{
+    background: black;
+}
+#userInfo{
+    float: right;
+    color: white;
+    padding: 8px;
+}
+.row{
+    margin-bottom: 15px;
+}
+.show-grid [class^=col-] {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #eee;
+    background-color: rgba(86, 61, 124, .15);
+    border: 1px solid #ddd;
+}

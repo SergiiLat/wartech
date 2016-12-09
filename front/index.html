@@ -2,17 +2,118 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+
+
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
     <script src='//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js'></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
+
+       <style>
+           body {
+               padding-top: 5rem !important;
+           }
+           .starter-template {
+               padding: 3rem 1.5rem;
+           }
+           form{
+               display: block;
+               max-width: 500px;
+               margin: 20px auto;
+               padding: 30px;
+               border-style: solid;
+               border-color: #ddd;
+               border-width: 1px;
+               border-radius: 4px 4px 0 0;
+           }
+           .navbar{
+               background: black;
+           }
+           #userInfo{
+               float: right;
+               color: white;
+               padding: 8px;
+           }
+           .row{
+               margin-bottom: 15px;
+           }
+           .show-grid [class^=col-] {
+               padding-top: 10px;
+               padding-bottom: 10px;
+               background-color: #eee;
+               background-color: rgba(86, 61, 124, .15);
+               border: 1px solid #ddd;
+           }
+       </style>
+
+
+
+
     <script src="app.js"></script>
-    <title></title>
+
+    <title>MAGAZIN</title>
+
 </head>
 <body>
-    MAGAZIN
+<nav class="navbar navbar-fixed-top navbar-dark bg-inverse">
+    <div id="userInfo" class='hidden'>
+        <span id="userName"></span>
+        <span id="userBasket">  Basket here...</span>
+        <a class="btn" id="btnLogout">logOut</a>
+    </div>
+</nav>
+
+
+<form class="form-horizontal" id="login">
+    <div class="form-group row">
+        <label for="email" class="col-sm-2 control-label">Email</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" name="_login" id="email" placeholder="Email">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="password" class="col-sm-2 control-label">Password</label>
+        <div class="col-sm-10">
+            <input type="password" class="form-control" id="password" placeholder="Password" name="_pass">
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-sm-offset-2 col-sm-10">
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox"> Remember me
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <div class="offset-sm-2 col-sm-10">
+            <button type="submit" id="btnLogin" class="btn btn-success">Sign in</button>
+        </div>
+    </div>
+</form>
+
+
+<div class="container">
+    <div class="starter-template">
+        <div id='products' class="show-grid">
+            <div class='product' id='product-1' class='product'></div>
+        </div>
+        <div id="itemsBlock">
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+   <!-- MAGAZIN
     <div id = "userBlock">
       <div id='login'>
         Login <input type="text" id="email"> </br>
@@ -25,13 +126,10 @@
           <span id="userBasket">  Basket here...</span>
           <button class="btn btn-success" id="btnLogout">logOut</button>
       </div>
-    </div>
-    <div id='products'>
-      <div class='product' id='product-1' class='product'></div>
-    </div>
-    <div id="itemsBlock">
+    </div>-->
 
-    </div>
+
+
 
 
 
