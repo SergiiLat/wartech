@@ -15,6 +15,7 @@ let token;
       }
       else
       {
+        $('#btnGetItems').removeClass('hidden')
         $('#btnLogout').removeClass('hidden')
         $('#btnLogin').addClass('hidden');
         $('#userName').text(data.name);
@@ -29,6 +30,7 @@ let token;
   $('#btnLogout').click(function(){
     $.get('/api/logout',function(data){
       $('#btnLogout').addClass('hidden')
+      $('#btnGetItems').addClass('hidden')
       $('#btnLogin').removeClass('hidden')
       $('#userToken').text("");
       $('#userName').text("");
@@ -36,7 +38,20 @@ let token;
     })
   });
 
+  $('#btnGetItems').click(function(){
+        $.ajax({
+          type:"GET",
+          beforeSend: function (request)
+          {
+            request.setRequestHeader("Authorization", token);
+          },
+          data:{token:token},
+          url: "/api/allItems",
+          success: function(msg) {
+            console.log(msg);
+          }
+        });
 
-
+  });
 
 });

@@ -3,6 +3,7 @@ var express = require('express');
 var router = express.Router();
 var loginCtrl = require('./controllers/loginCtrl');
 var userCtrl = require('./controllers/userCtrl');
+var itemCtrl = require('./controllers/ItemCtrl');
 
 /**
  * @apiDefine user User access only
@@ -73,6 +74,7 @@ router.use(loginCtrl.checkToken);
  * 
  */
 router.get('/api/profile',userCtrl.getUserInfo);
+router.get('/api/allItems',itemCtrl.getAllItems);
 
 
 module.exports = router;

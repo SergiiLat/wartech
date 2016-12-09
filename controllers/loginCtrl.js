@@ -33,7 +33,7 @@ module.exports = (function () {
             res.end('ok');
         },
         checkToken: function (req, res, next) {
-            let token;
+          /*  let token;
             if (req.headers && req.headers.authorization) {
                 let parts = req.headers.authorization.split(' ');
                 if (parts.length == 2) {
@@ -46,9 +46,9 @@ module.exports = (function () {
                 } else {
                     return res.status(401).json({err: 'Format is Authorization: Bearer [token]'});
                 }
-            }
+            }*/
 
-            //   let token = req.body.token || req.query.token || req.headers['Authorization'];
+            let token = req.body.token || req.query.token || req.headers['Authorization'];
             if (token) {
 
                 jwt.verify(token, secret, function (err, decoded) {

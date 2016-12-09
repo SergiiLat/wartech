@@ -1,25 +1,23 @@
 "use strict";
 
-let userModel = require('../models/itemModel');
+let itemModel = require('../models/itemModel');
 
 
 module.exports = (function () {
   return {
-    getUserInfo: function (req, res) {
-      userModel.getUserBy({id:req.user.id}, function (err, user) {
+    getAllItems: function (req, res) {
+      itemModel.getAll(function (err, items) {
         if (err)
         {
           res.status(404).send({
             success: false,
-            message: 'User not found'
+            message: 'Some isnt wrong'
           });
         }
         else
         {
-          res.send(user);
+          res.send(items);
         }
-
-
 
       });
 
