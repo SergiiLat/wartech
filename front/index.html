@@ -35,14 +35,28 @@
                padding: 8px;
            }
            .row{
-               margin-bottom: 15px;
            }
-           .show-grid [class^=col-] {
+           .show-grid [class^="col-"] {
                padding-top: 10px;
                padding-bottom: 10px;
-               background-color: #eee;
-               background-color: rgba(86, 61, 124, .15);
-               border: 1px solid #ddd;
+
+           }
+           .show-grid .row{
+               border-bottom: 1px solid #ddd;
+           }
+           .show-grid .row:hover{
+               background-color: rgba(86,61,124,.15);
+
+           }
+           .glyphicon{
+               text-align: center;
+               font-size: 2em;
+           }
+           [class^="col-"]>button{
+               margin: -8px;
+           }
+           .tash{
+               min-height: 30px;
            }
        </style>
 
@@ -58,28 +72,9 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <nav class="navbar navbar-fixed-top navbar-dark bg-inverse">
+    <a class="navbar-brand">Добро пожаловать</a>
+
     <div id="userInfo" class='hidden'>
         <span id="userName"></span>
         <span id="userBasket">  Basket here...</span>
@@ -120,17 +115,35 @@
 
 
 <div class="container">
-    <div class="starter-template">
-        <div id='products' class="show-grid">
-            <div class='product' id='product-1' class='product'></div>
-        </div>
-        <div id="itemsBlock">
+    <div class="starter-template hidden">
+        <div class="row">
+            <div class="col-md-8" style="border-right: 1px solid #eee;">
+                <div class="show-grid">
+                    <div class="tash">
+                        <span class="glyphicon glyphicon-th-list" aria-hidden="true">
 
+                        </span>
+                    </div>
+                    <div class='product' id='products' class='product'></div>
+                </div>
+            </div>
+            <div class="col-md-4" style="border-left: 1px solid #eee; margin-left: -1px">
+                <div id="itemsBlock"  class="show-grid">
+                    <div class="tash">
+                        <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true">
+
+                        </span>
+                    </div>
+                    <div id="basketItems">
+
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
 
-
+<!--
 <div style="display:inline-block; width:300px;height:600px;border:1px solid black" id='products'>
     <div class='product' id='product-1' class='product'></div>
 </div>
@@ -140,31 +153,11 @@
 
     </div>
 
-</div>
+</div>-->
 
 
 
 
-   <!-- MAGAZIN
-    <div id = "userBlock">
-      <div id='login'>
-        Login <input type="text" id="email"> </br>
-        Pass  <input type="text" id="password"> </br>
-
-        <button class="btn btn-success" id="btnLogin">login</button>
-      </div>
-      <div id="userInfo" class='hidden'>
-          <span id="userName"></span>
-          <span id="userBasket">  Basket here...</span>
-          <button class="btn btn-success" id="btnLogout">logOut</button>
-      </div>
-    </div>
-    <div id='products'>
-      <div class='product' id='product-1' class='product'></div>
-    </div>
-    <div id="itemsBlock">
-
-    </div>
 
 
 

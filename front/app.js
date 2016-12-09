@@ -5,6 +5,7 @@ var basket;
 
   if (token) {
     $('#userInfo').removeClass('hidden')
+    $('.starter-template').removeClass('hidden')
     $('#login').addClass('hidden');
 
   }else{
@@ -27,6 +28,8 @@ var basket;
       else
       {
         $('#userInfo').removeClass('hidden')
+        $('.navbar').removeClass('hidden')
+        $('.starter-template').removeClass('hidden')
         $('#login').addClass('hidden');
         $('#email').val("");
         $('#password').val("");
@@ -43,6 +46,9 @@ var basket;
       $('#products').html("");
       $('#userInfo').addClass('hidden')
       $('.navbar').addClass('hidden')
+
+      $('.starter-template').addClass('hidden')
+
       $('#login').removeClass('hidden');
       $('#userToken').text("");
       $('#userName').text("");
@@ -93,9 +99,9 @@ var basket;
         $('#products').html(
           products.map(function(product) {
             return '<div class="product row" id="product-' + product.id + '">'
-              + '<div class="product-name col-md-5">'+product.name+'</div>'
-              + '<div class="product-price col-md-5">'+product.price+'</div>'
-              + '<button class="product-buy btn btn-default col-md-2">Add to cart</button>'
+              + '<div class="col-md-5 product-name ">'+product.name+'</div>'
+              + '<div class="col-md-5 product-price ">'+product.price+'</div>'
+              + '<div class="col-md-2"><button class="product-buy btn btn-success" product_id="'+product.id+'">Add to cart</button></div>'
               + '</div>'
           }).join('\n')
         )
@@ -112,10 +118,10 @@ var basket;
         {
           $('#basketItems').html(
           response.data.map(function(basketItem) {
-            return '<div class="basket-product" id="basket-product-' + basketItem.item_id + '">'
-              + '<span class="basket-product-name">'+basketItem.name+'</span>'
-              + '<span class="basket-product-price">'+basketItem.price+'</span>'
-              + '<button class="product-remove" basket_id="'+basketItem.id+'">Remove</button>'
+            return '<div class="basket-product row" id="basket-product-' + basketItem.item_id + '">'
+              + '<div class="col-md-4  basket-product-name">'+basketItem.name+'</div>'
+              + '<div class="col-md-5 basket-product-price">'+basketItem.price+'</div>'
+              + '<div class="col-md-3 "><button class="product-remove btn btn-danger" basket_id="'+basketItem.id+'">Remove</button></div>'
               + '</div>'
           }).join('\n')
           );
