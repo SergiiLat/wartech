@@ -40,11 +40,11 @@ var token = $.cookie("token")
     })
   });
   
-  $('.product').click(function() {
+  $('.product-buy').click(function() {
       $.ajax({
         type: 'POST',
         data: {
-          productId: $(this).attr('id').replace('product-'),
+          productId: $(this).parents('.product').attr('id').replace('product-'),
           token: token
         },
         url: '/addToBasket',
