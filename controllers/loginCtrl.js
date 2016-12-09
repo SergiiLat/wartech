@@ -34,7 +34,7 @@ module.exports = (function () {
             res.end('ok');
         },
         checkToken: function (req, res, next) {
-            let token = req.body.token || req.query.token || req.headers['Authorization'] || req.cookies.token;
+            let token = req.body.token || req.query.token || req.headers['Authorization'] || req.headers['authorization'] || req.cookies.token;
             if (token) {
 
                 jwt.verify(token, secret, function (err, decoded) {
